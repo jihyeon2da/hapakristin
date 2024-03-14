@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>하파크리스틴 리뉴얼</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.scss">
+
+
+    <script src="lib/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
+
+    <script>
+        $(function () {
+
+            //pc_menu
+            let pcMenuBtn = $('.header .inner .menu_btn')
+            let pcMenu = $('.header .gnb-pc')
+
+            pcMenuBtn.mouseenter(function(){
+                //alert()
+                pcMenu.animate({
+                    'left' : '0'
+                },1000)
+            });
+            pcMenu.mouseleave(function(){
+                pcMenu.animate({
+                    'left' : '-100%'
+                },1000)
+            })
+
+            //signiture
+            let sigBtn = document.querySelectorAll('.signiture .inner .cont .tab_menu button')
+            let sigImgWrap = document.querySelectorAll('.signiture .inner .cont .box')
+            
+            for(let i = 0; i < sigBtn.length; i++) {
+                sigBtn[i].addEventListener('click', () => {
+                    //alert()
+
+                    
+                    sigBtn.forEach((item) => {
+                        item.classList.remove('on');
+                    });
+                    sigBtn[i].classList.add('on');
+
+                    sigImgWrap.forEach((itemWrap) => {
+                        itemWrap.classList.remove('on');
+                    });
+
+                    sigImgWrap[i].classList.add('on');
+                });   
+            }
+
+
+
+
+
+            //event
+            var swiper4 = new Swiper(".event_slide", {
+                slidesPerView: 1.2,
+                spaceBetween: 15,
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+            });
+
+            let eventTitle = $('.event .text_wrap .text h4')
+            let eventText = $('.event .text_wrap .text p')
+
+            swiper4.on('slideChange', function () {
+                var currentSlide = $(swiper4.slides[swiper4.activeIndex]); //swiper-slide
+              
+                var itemTit = currentSlide.attr("data-text");
+                var itemCmt = currentSlide.attr("data-subText");
+               
+                
+                eventTitle.html(itemTit);
+                eventText.html(itemCmt);
+            })
+
+
+
+
+
+
+
+            //swiper
+            var swiper = new Swiper(".main_slide", {
+            spaceBetween: 0,
+            centeredSlides: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+        });//end
+    </script>
+
+</head>
+
+<body>
+    <div class="wrap" id="wrap">
+        <header class="header" id="header">
+            <div class="inner">
+                <h1>
+                    <a href="#">
+                        <img class="pc" src="img/logo.png" alt="hapakristin">
+                        <img class="mobile" src="img/logo_fff.png" alt="logo_fff">
+                    </a>
+                </h1>
+
+                <button class="menu_btn pc">
+                    <img src="img/menuBtn.png" alt="메뉴보기">
+                </button><!-- .menu_btn end -->
+
+                <nav class="gnb-pc pc">
+
+                    <div class="left gnb-util">
+                        <button>
+                            <img src="img/icons_shopping.png" alt="장바구니">
+                        </button>
+                        <button>
+                            <img src="img/icons8-customer.png" alt="회원정보">
+                        </button>
+                        <a href="#"><img src="img/logo_fff 1.png" alt=""></a>
+                    </div><!-- .gnb-util end -->
+
+                    <ul class="right gnb">
+                        <li class="depth01">
+                            <a href="#">PICKUP</a>
+                        </li>
+                        <li class="depth01">
+                            <a href="#">COLLECTION</a>
+                            <ul class="depth02">
+                                <li><a href="#">SIGNITURE</a></li>
+                                <li><a href="#">NEW</a></li>
+                                <li><a href="#">BEST</a></li>
+                                <li><a href="#">ALL</a></li>
+                                <li><a href="#">MONTHLY</a></li>
+                                <li><a href="#">ONE DAY</a></li>
+                                <li><a href="#">MINI SHOP</a></li>
+                                <li><a href="#">GIFT ROOM</a></li>
+                            </ul>
+                        </li>
+                        <li class="depth01">
+                            <a href="#">EVENT</a>
+                        </li>
+                        <li class="depth01">
+                            <a href="#">SERVICE CENTER</a>
+                        </li>
+                        <input type="text" placeholder="FIND YOUR MOOD">
+                    </ul><!-- gnb end -->
+
+                </nav><!-- gnb-pc end -->
+
+                <div class="util">
+                    <ul class="pc util-pc">
+                        <li><a href="#">매장찾기</a></li>
+                        <li><a href="#">검색</a></li>
+                        <li><a href="#">장바구니</a></li>
+                        <li><a href="#">로그인</a></li>
+                    </ul><!-- .util-pc end -->
+
+                    <button class="util-mobile mobile">
+                        <img src="img/icons_shopping.png" alt="장바구니">
+                    </button><!-- .util-mobile end -->
+                </div><!-- .util end -->
+
+
+
+
+            </div><!-- .inner end -->
+        </header><!-- .header end -->
+
+        <main class="main" id="main">
+            <div class="main_visual">
+                <div class="swiper main_slide">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <figure class="pc-767"><img src="img/mainVisual_04.jpg" alt="main4"></figure>
+                            <figure class="mobile-324"><img src="img/mainVisual_04_324px.jpg" alt=""></figure>
+                        </div>
+                        <div class="swiper-slide">
+                            <figure class="pc-767"><img src="img/mainVisual_05.jpg" alt="main4"></figure>
+                            <figure class="mobile-324"><img src="img/mainVisual_05_324px.jpg" alt=""></figure>
+                        </div>
+                        <div class="swiper-slide">
+                            <figure class="pc-767"><img src="img/mainVisual_06.jpg" alt="main4"></figure>
+                            <figure class="mobile-324"><img src="img/mainVisual_06_324px.jpg" alt=""></figure>
+                        </div>
+                        <div class="swiper-slide">
+                            <figure class="pc-767"><img src="img/mainVisual_07.jpg" alt="main4"></figure>
+                            <figure class="mobile-324"><img src="img/mainVisual_07_324px.jpg" alt=""></figure>
+                        </div>
+                        <div class="swiper-slide">
+                            <figure class="pc-767"><img src="img/mainVisual_08.jpg" alt="main4"></figure>
+                            <figure class="mobile-324"><img src="img/mainVisual_08_324px.jpg" alt=""></figure>
+                        </div>
+                        <div class="swiper-slide">
+                            <figure class="pc-767"><img src="img/mainVisual_09.jpg" alt="main4"></figure>
+                            <figure class="mobile-324"><img src="img/mainVisual_09_324px.jpg" alt=""></figure>
+                        </div>
+                        <div class="swiper-slide">
+                            <figure class="pc-767"><img src="img/mainVisual_01.jpg" alt="main4"></figure>
+                            <figure class="mobile-324"><img src="img/mainVisual_01_324px.jpg" alt=""></figure>
+                        </div>
+                        <div class="swiper-slide">
+                            <figure class="pc-767"><img src="img/mainVisual_02.jpg" alt="main4"></figure>
+                            <figure class="mobile-324"><img src="img/mainVisual_02_324px.jpg" alt=""></figure>
+                        </div>
+                        <div class="swiper-slide">
+                            <figure class="pc-767"><img src="img/mainVisual_03.jpg" alt="main4"></figure>
+                            <figure class="mobile-324"><img src="img/mainVisual_03_324px.jpg" alt=""></figure>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div><!-- .slie_wrap end -->
+            </div>
+        </main><!-- .main end -->
+
+        <section class="best s1">
+            <div class="inner">
+                <div class="title">
+                    <h2>베스트상품</h2>
+                    <button>전체보기</button>
+                </div><!-- .title -->
+
+                <div class="item">
+                    <div class="list">
+                        <figure>
+                            <img src="img/best_01.jpg" alt="best01">
+                            <img class="best_img_2" src="img/best_01-1.jpg" alt="-1">
+                        </figure>
+                        <span class="lens"><img src="img/best_01.png" alt="best01-png"></span>
+                        <div class="text">
+                            <h4>포에버영 크리스틴<br/>- 뮤즈 그레이</h4>
+                            <div class="price">
+                                <p>25,000원</p>
+                                <strong>20,000원</strong>
+                            </div>
+                            <div>
+                                <p>한달용 / 12.7mm(14.2mm)</p>
+                                <span>4.8</span>
+                            </div>
+                        </div><!-- .text -->
+                    </div><!-- .list end -->
+
+                    <div class="list">
+                        <figure>
+                            <img src="img/best_02.jpg" alt="best02">
+                            <img class="best_img_2" src="img/best_02-1.jpg" alt="-2">
+                        </figure>
+                        <span class="lens"><img src="img/best_02.png" alt="best02-png"></span>
+                        <div class="text">
+                            <h4>폰디 크리스틴 원데이<br/> - 그레이</h4>
+                            <div class="price">
+                                <strong>20,000원</strong>
+                            </div>
+                            <div>
+                                <p>원데이 / 13.3mm(14.2mm)</p>
+                                <span>4.6</span>
+                            </div>
+                        </div><!-- .text -->
+                    </div><!-- .list end -->
+
+                    <div class="list">
+                        <figure>
+                            <img src="img/best_03.jpg" alt="best03">
+                            <img class="best_img_2" src="img/best_03-1.jpg" alt="-3">
+                        </figure>
+                        <span class="lens"><img src="img/best_03.png" alt="best03-png"></span>
+                        <div class="text">
+                            <h4>시크리티브 크리스틴 플러스<br/> - 올리브</h4>
+                            <div class="price">
+                                <p>25,000원</p>
+                                <strong>20,000원</strong>
+                            </div>
+                            <div>
+                                <p>한달용 / 13.5mm(Plus)</p>
+                                <span>4.8</span>
+                            </div>
+                        </div><!-- .text -->
+                    </div><!-- .list end -->
+
+                    <div class="list">
+                        <figure>
+                            <img src="img/best_04.jpg" alt="best04">
+                            <img class="best_img_2" src="img/best_04-1.jpg" alt="-4">
+                        </figure>
+                        <span class="lens"><img src="img/best_04.png" alt="best04-png"></span>
+                        <div class="text">
+                            <h4>듀이 크리스틴 원데이<br/> - 브라운</h4>
+                            <div class="price">
+                                <p>19,000원</p>
+                                <strong>17,000원</strong>
+                            </div>
+                            <div>
+                                <p>원데이/ 11.8mm(14.2mm)</p>
+                                <span>4.2</span>
+                            </div>
+                        </div><!-- .text -->
+                    </div><!-- .list end -->
+                </div><!-- .item -->
+
+            </div><!-- .inner end -->
+        </section><!-- .best end -->
+
+        <section class="signiture s2">
+            <div class="inner">
+                <div class="title">
+                    <h2>HAPA SIGNITURE</h2>
+                    <p>하파크리스틴만의 시그니처를 한번에 확인해보세요.</p>
+                </div><!-- .title end -->
+                <div class="cont">
+                    <div class="tab_menu">
+                        <button>#원앤온리</button>
+                        <button>#시크릿티브</button>
+                        <button>#버터스윗</button>
+                    </div><!-- .tab_menu end -->
+                    <div class="box on">
+                        <div class="big_box">
+                            <figure><img src="img/원앤온리.jpg" alt="원앤온리"></figure>
+                        </div><!-- big_box end -->
+                        <div class="small_box">
+                            <figure><img src="img/원앤온리01.jpg" alt=""></figure>
+                            <figure><img src="img/원앤온리03.jpg" alt=""></figure>
+                        </div><!-- .small_box end -->
+
+                        <div class="text_wrap">
+                            <div class="text">
+                                <h4>하파크리스틴 시그니처 #원앤온리 크리스틴</h4>
+                                <p> 소묘에서 모티브를 얻은 섬세하고 부드러운 그래픽과 눈동자 색상보다 살짝 밝은,<br />
+                                    자연스러운 브라운 색상 배합으로 언제나 초롱초롱 생기있어 보이는 디자인입니다.<br />
+                                    컬러렌즈를 처음 시도하는 분들께도 추천드립니다.</p>
+                            </div><!-- text end -->
+                            <button>보러가기</button>
+                        </div><!-- .text_wrap end -->
+                    </div><!-- .box end -->
+
+                    <div class="box">
+                        <div class="big_box">
+                            <figure><img src="img/시크릿티브01.jpg" alt="시크릿티브"></figure>
+                        </div><!-- big_box end -->
+                        <div class="small_box">
+                            <figure><img src="img/시크릿티브04.jpg" alt=""></figure>
+                            <figure><img src="img/시크릿티브05.jpg" alt=""></figure>
+                        </div><!-- .small_box end -->
+
+                        <div class="text_wrap">
+                            <div class="text">
+                                <h4>시크릿티브</h4>
+                                <p> 눈동자에 비친 빛을 표현한 그래픽입니다.<br/>
+                                    투명한 투톤 그래픽과 써클링이 그라데이션되어 본래의 눈동자 색과 우아하게 어우러집니다.<br/>
+                                    수채화처럼 퍼지는 녹음과 같은 컬러감이 차분하면서도 신비로운 눈빛을 연출해줍니다.</p>
+                                <button>보러가기</button>
+                            </div><!-- .text -->
+                        </div><!-- .text_wrap end -->
+                    </div><!-- .box end -->
+
+                    <div class="box">
+                        <div class="big_box">
+                            <figure><img src="img/버터스윗03.jpg" alt="버터스윗"></figure>
+                        </div><!-- big_box end -->
+                        <div class="small_box">
+                            <figure><img src="img/버터스윗01.jpg" alt=""></figure>
+                            <figure><img src="img/버터스윗02.jpg" alt=""></figure>
+                        </div><!-- .small_box end -->
+
+                        <div class="text_wrap">
+                            <div class="text">
+                                <h4>버터스윗</h4>
+                                <p> #4톤시그니처디자인 #비터스윗크리스틴 본연의 밝은 눈빛 연출.<br/>
+                                    앰버, 올리브, 브라운 베이스의 4Mix 컬러 조합과 섬세하게 한 층 한 층 쌓아올린<br/>
+                                    그래픽 표현으로 타고난 듯 자연스럽게 밝은 앰버빛 눈빛을 연출합니다.</p>
+                            </div><!-- .text -->
+                            <button>보러가기</button>
+                        </div><!-- text_wrap -->
+                    </div><!-- .box end -->
+
+                </div><!-- .cont end -->
+
+            </div><!-- .inner end -->
+        </section><!-- .signiture end -->
+
+        <section class="brand_info s3">
+            <div class="inner">
+                <h5>Who are you TODAY?</h5>
+                <div class="cont">
+                    <div class="left">
+                        <p>“하파크리스틴의 렌즈 상자에는 ‘크리스틴’이라는<br />
+                            다양한 감정을 지닌 소녀가 존재합니다.”</p>
+                        <p>
+                            “크리스틴은 다양한 기분에 맞는 렌즈를 통해<br />
+                            오늘의 자신을 결정하곤 하죠.”
+                        </p>
+                        <div class="btn_info">
+                            <p>자, 그럼<br />
+                                <strong>당신은 오늘 누구이고 싶은가요?</strong>
+                            </p>
+                            <button>SHOW YOUR MOOD</button>
+                        </div>
+                    </div><!-- .left end -->
+                    <div class="right">
+                        <div class="swiper main_slide">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <figure><img src="img/showyourmood_01.jpg" alt="show"></figure>
+                                </div>
+                                <div class="swiper-slide">
+                                    <figure><img src="img/showyourmood_02.jpg" alt="show"></figure>
+                                </div>
+                                <div class="swiper-slide">
+                                    <figure><img src="img/showyourmood_03.jpg" alt="show"></figure>
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div><!-- .slie_wrap end -->
+                    </div><!-- .right -->
+                </div><!-- .cont end -->
+            </div><!-- inner end -->
+
+        </section><!-- brand_info end -->
+
+        <section class="event s4">
+            <div class="text_wrap">
+                <h2>EVENT</h2>
+                <div class="text">
+                    <h4>하파크리스틴이 처음이라면?</h4>
+                    <p>NEW 미니세트로 체험해보기</p>
+                </div><!-- .text -->
+                <button>보러가기</button>
+            </div><!-- .text_wrap end -->
+
+            <div class="swiper_wrap">
+                <div class="swiper event_slide">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide" data-text="하파크리스틴이 처음이라면?" data-subText="NEW 미니세트로 체험해보기">
+                            <figure><img src="img/event01.jpg" alt="이벤트베너"></figure>
+                        </div>
+
+                        <div class="swiper-slide" data-text="만나서 반가워요" data-subText="신규 가입 시 5,000원 할인쿠폰 증정">
+                            <figure><img src="img/event02.jpg" alt="이벤트베너"></figure>
+                        </div>
+
+                        <div class="swiper-slide" data-text="하파크리스틴 픽업 서비스란?" data-subText="이용방법 확인하기">
+                            <figure><img src="img/event03.jpg" alt="이벤트베너"></figure>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+
+        </section><!-- .event end -->
+
+        <footer class="footer" id="footer">
+            <div class="inner">
+                <div class="left">
+                    <figure>
+                        <img src="img/logo.png" alt="logo">
+                    </figure>
+                    <div class="sns">
+                        <a href="#"><img src="img/2553090_camera_feed_instagram_media_news_icon (1).png" alt=""></a>
+                        <a href="#"><img src="img/2553092_media_news_play_social_video_icon.png" alt=""></a>
+                        <a href="#"><img src="img/2553054_facebook_fb_feed_like_media_icon (1).png" alt=""></a>
+                        <a href="#"><img src="img/2553058_feed_linkedin_media_news_sns_icon.png" alt=""></a>
+                    </div><!-- .sns -->
+                    <div class="info">
+                        <p>Copyright  ©HapaKristin All rights reserved.</p>
+                        <ul>
+                            <li><a href="#">이용약관</a></li>
+                            <li><a href="#">개인정보처리방침</a></li>
+                            <li><a href="#">사업자정보확인</a></li>
+                        </ul>
+                        <div class="info_text">
+                            <div>
+                                <p>(주)윙크컴퍼니</p>
+                                <p>대표 : 이승준</p>
+                            </div>
+                            <div>
+                                <p>사업자등록번호 : 309-88-01452</p>
+                                <p>통신판매 신고번호 : 제 2019-서울서초-3153호</p>
+                            </div>
+                            <div>
+                                <p>서울특별시 강남구 선릉로 428</p>
+                                <p>개인정보관리책임자 : 이승준</p>
+                            </div>
+                            <div>
+                                <p>Tel : 1533-1797</p>
+                                <p>고객문의 : cs@winc.app</p>
+                                <p>파트너문의 : partner@winc.app</p>
+                            </div>
+                        </div><!-- info_text end -->
+                    </div><!-- .info end -->
+                </div><!-- .left end -->
+                <div class="right">
+                    <div>
+                        <p>고객센터</p>
+                        <strong>1533-1719</strong>
+                        <span>상담시간 09:00 ~ 17:00</span>
+                        <span>점심시간 11:30 ~ 13:00</span>
+                        <span> (토/일/공휴일 휴무)</span>
+                    </div>
+                    <div>
+                        <p>교환 / 환불 안내</p>
+                        <p>1 : 1 채팅문의</p>
+                        <p>픽업매장찾기</p>
+                        <p>재고보유매장찾기</p>
+                    </div>
+                    <div>
+                        <p>하파크리스틴 가맹 신청</p>
+                        <p>픽업안경원 신청</p>
+                    </div>
+                </div><!-- right end -->
+            </div><!-- .inner end -->
+        </footer><!-- .footer end -->
+
+
+    </div><!-- .wrap end -->
+
+
+
+
+
+    
+</body>
+
+</html>
