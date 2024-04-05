@@ -39,6 +39,9 @@
 }
 
 html, body {font-size: 62.5%;}
+body {
+    word-break: keep-all;
+}
 
 .mobile {display: none;}
 .mobile-324 {display: none;}
@@ -201,8 +204,8 @@ html, body {font-size: 62.5%;}
             button {
                 padding: 1rem 5.5rem;
                 border-radius: 5px;
-                background-color: #ff5b98;
-                color: #fff;
+                background-color:  rgba(255, 91, 151, 0.3);
+                color: #333;
                 position: absolute;
                 bottom: 0;
                 right: 0;
@@ -486,8 +489,8 @@ html, body {font-size: 62.5%;}
         display: flex;
         justify-content: space-between;
         .text_wrap {
-            width: 30%;
-            margin: 11rem 0 12rem;
+            padding-top: 2rem;
+            width: 32%;
             h2 {
                 font-size: var(--title-size);
                 font-weight: bold;
@@ -509,7 +512,7 @@ html, body {font-size: 62.5%;}
                 padding: 10px 0;
                 border-radius: 10px;
                 background-color: rgb(255, 91, 152, 0.3);
-                margin-top: 10rem;
+                margin-top: 4rem;
                 margin-left: 20rem;
                 font-size: 16px;
                 &:hover {
@@ -520,7 +523,6 @@ html, body {font-size: 62.5%;}
         }
         .swiper_wrap {
             width: 60%;
-            }
             figure {
                 width: 80%;
                 img {
@@ -529,6 +531,8 @@ html, body {font-size: 62.5%;}
                     object-fit: cover;
                 }
             }
+            .event_mobile {display: none;}
+        }
 }
 
 .footer {
@@ -613,6 +617,23 @@ html, body {font-size: 62.5%;}
 }
     
 
+@media screen and (max-width:1600px) {
+    .event .text_wrap {
+        width: 37%;
+    }
+    .event .text_wrap h2 {
+        font-size: 5.8rem;
+        margin-bottom: 4rem;
+    }
+    .event .text_wrap .text h4 {
+        margin-bottom: 2rem;
+        font-size: 3.2rem;
+    }
+    .event .text_wrap .text p {
+        font-size: 2.5rem;
+    }
+}//1700
+
 @media screen and (max-width:1300px) {
     .best .inner .item .list .list_img .lens {
         transform: translate(10%, 5%);
@@ -631,8 +652,37 @@ html, body {font-size: 62.5%;}
         height: 18px;
     }
 
-}//
+    /* .event */
+    .event {
+        margin-left: 18rem;
+    }
+    .event .text_wrap h2 {
+        font-size: 5rem;
+        margin-bottom: 2rem;
+    }
+    .event .text_wrap .text h4 {
+        margin-bottom: 2rem;
+        font-size: 3.2rem;
+    }
+    .event .text_wrap .text p {
+        font-size: 2.5rem;
+    }
 
+}//1300
+
+@media screen and (max-width:1280px) {
+    .event {
+        margin-left: 15rem;
+    }
+    .event .text_wrap {
+        margin-left: 0rem;
+    }
+}
+@media screen and (max-width:1210px)  {
+    .brand_info .inner .cont .left p {
+        font-size: 2.8rem;
+    }
+}
 @media screen and (max-width:1200px) {
     .signiture .inner .cont .box .text_wrap {
         bottom: -20px;
@@ -647,6 +697,23 @@ html, body {font-size: 62.5%;}
     /* .brand  */
     .brand_info .inner .cont .right figure{
         height: 51vw;
+    }
+
+    /* .event */
+    .event {
+        margin-left: 12rem;
+    }
+    .event .text_wrap h2 {
+        font-size: 4.5rem;
+    }
+    .event .text_wrap .text h4 {
+        font-size: 3rem;
+    }
+    .event .text_wrap button {
+        width: 44%;
+        padding: 6px 0;
+        margin-top: 3rem;
+        font-size: 15px;
     }
 
 }//1200
@@ -672,8 +739,107 @@ html, body {font-size: 62.5%;}
     .brand_info .inner .cont .left .btn_info button {
         font-size: 20px;
     }
+
+    /* .event */
+    .event {
+        margin-left: 6rem;
+    }
+    .event {
+        padding-top: 0;
+    }
+    .event .text_wrap {
+        width: 45%;
+    }
+    .event .text_wrap h2 {
+        font-size: 5rem;
+        margin-bottom: 1.5rem;
+    }
+    .event .text_wrap .text h4 {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+    }
+    .event .text_wrap .text p {
+        font-size: 2.5rem;
+    }
+    .event .text_wrap button {
+        width: 29%;
+        padding: 4px 0;
+        font-size: 16px;
+    }
+    .event .swiper_wrap {
+        width: 50%;
+    }
     
 }//1100
+
+@media screen and (max-width:1120px) {
+    .event {
+        padding-top: 0;
+    }
+    .event .text_wrap {
+        width: 45%;
+    }
+    .event .text_wrap h2 {
+        font-size: 5rem;
+        margin-bottom: 1.5rem;
+    }
+    .event .text_wrap .text h4 {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+    }
+    .event .text_wrap .text p {
+        font-size: 2.5rem;
+    }
+    .event .text_wrap button {
+        width: 29%;
+        padding: 4px 0;
+        font-size: 16px;
+    }
+    .event .swiper_wrap {
+        width: 50%;
+    }
+    
+}//1020
+
+@media screen and (max-width:1010px) {
+    .event {
+        margin-left: 0;
+        padding: 7rem 2.2rem;
+        display: block;
+        background-color: #f6efea;
+    }
+    .event .text_wrap {
+        width: 100%;
+    }
+    .event .text_wrap h2 {
+        font-size: 6rem;
+        margin-bottom: 0;
+        margin-left: 15rem;
+    }
+    .event .text_wrap .event_pc {
+        display: none;
+    }
+    .event .text_wrap button {
+        margin: 0;
+        width: 100px;
+        margin-left: 80rem;
+    }
+    .event .swiper_wrap {
+        width: 60%;
+        margin: 0 auto;
+    }
+    .event .swiper_wrap .event_mobile {
+        display: block;
+    }
+    .event .swiper_wrap .event_mobile h4 {
+        font-size: 2.4rem;
+        font-weight: bold;
+    }
+    .event .swiper_wrap .event_mobile p {
+        font-size: 2rem;
+    }
+    
+}
 
 @media screen and (max-width:980px) {
     .signiture .inner .cont .box .text_wrap {
@@ -810,10 +976,14 @@ html, body {font-size: 62.5%;}
    /* .brand */ 
    .brand_info .inner .cont {
     flex-wrap: wrap;
+
+    order: 1;
    }
    .brand_info .inner .cont .left {
         padding: 2rem;
         width: 100%;
+   }
+   .brand_info .inner .cont .right {
         order: -1;
    }
    .brand_info .inner .cont .left p {
@@ -926,8 +1096,50 @@ html, body {font-size: 62.5%;}
 
 }//710
 
+@media screen and (max-width:500px)  {
+    .brand_info .inner h5 {
+        font-size: 4.8rem;
+    }
+    .brand_info .inner .cont {
+        margin-top: 2.2rem;
+    }
+    .brand_info .inner .cont .right figure {
+        height: 380px;
+        width: 300px;
+    }
+    .brand_info .inner .cont .left p {
+        margin-top: 0;
+    }
+}
+
 @media screen and (max-width:480px)  {
     .signiture .inner .cont .box.on {
         display: block;
+    }
+}
+@media screen and (max-width:430px)  {
+    .signiture .inner .cont .box.on {
+        display: flex;
+    }
+    .signiture .inner .cont .box .big_box figure {
+        height: 27.9rem;
+    }
+    .signiture .inner .cont .box .small_box {
+        width: 50%;
+        height: 27.9rem;
+    }
+    .signiture .inner .cont .box .small_box figure:nth-child(1) {
+        margin-bottom: 10px;
+    }
+    .signiture .inner .cont .box .text_wrap {
+        bottom: -240px;
+        text-align: left;
+    }
+    .signiture .inner .cont .box .text_wrap h4 {
+        font-size: 2rem;
+    }
+    .signiture .inner .cont .box .text_wrap p {
+        margin: 2rem 0 20px;
+        font-size: 16px;
     }
 }
